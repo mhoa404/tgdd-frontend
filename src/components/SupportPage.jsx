@@ -28,7 +28,7 @@ export default function SupportPage() {
         console.log(" Gửi yêu cầu:", formData);
 
         try {
-            const res = await fetch("http://localhost:5000/api/support", {
+            const res = await fetch("https://tgdd-be.mhoa.id.vn/api/support", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

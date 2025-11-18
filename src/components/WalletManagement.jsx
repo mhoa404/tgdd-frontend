@@ -7,7 +7,7 @@ export default function WalletManagement() {
     const fetchDepositRequests = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/admin/deposits', {
+            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/admin/deposits', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setDepositRequests(response.data);
@@ -19,7 +19,7 @@ export default function WalletManagement() {
     const handleApprove = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/deposits/${id}/approve`, {}, {
+            await axios.put(`https://tgdd-be.mhoa.id.vn/api/admin/deposits/${id}/approve`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchDepositRequests();
@@ -32,7 +32,7 @@ export default function WalletManagement() {
     const handleReject = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`http://localhost:5000/api/admin/deposits/${id}/reject`, {}, {
+            await axios.put(`https://tgdd-be.mhoa.id.vn/api/admin/deposits/${id}/reject`, {}, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchDepositRequests();

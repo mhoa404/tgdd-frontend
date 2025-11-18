@@ -39,7 +39,7 @@ const AdminPage = () => {
     -------------------------------------------*/
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/products');
+            const res = await axios.get('https://tgdd-be.mhoa.id.vn/api/products');
             setProducts(res.data);
         } catch (error) {
             console.error('Lỗi khi lấy sản phẩm:', error);
@@ -63,10 +63,10 @@ const AdminPage = () => {
             };
 
             if (editingProduct) {
-                await axios.put(`http://localhost:5000/api/products/${editingProduct.id}`, formData);
+                await axios.put(`https://tgdd-be.mhoa.id.vn/api/products/${editingProduct.id}`, formData);
                 setEditingProduct(null);
             } else {
-                await axios.post('http://localhost:5000/api/products', formData);
+                await axios.post('https://tgdd-be.mhoa.id.vn/api/products', formData);
             }
 
             setForm({
@@ -89,7 +89,7 @@ const AdminPage = () => {
     -------------------------------------------*/
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://tgdd-be.mhoa.id.vn/api/products/${id}`);
             fetchProducts();
         } catch (error) {
             console.error('Lỗi khi xoá sản phẩm:', error);

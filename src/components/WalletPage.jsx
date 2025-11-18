@@ -38,7 +38,7 @@ const WalletPage = () => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.post(
-                'http://localhost:5000/api/wallet/deposit',
+                'https://tgdd-be.mhoa.id.vn/api/wallet/deposit',
                 { amount: parseInt(depositAmount) },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -54,7 +54,7 @@ const WalletPage = () => {
     const fetchWalletInfo = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/wallet', {
+            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/wallet', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setWallet(response.data.wallet);

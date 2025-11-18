@@ -72,7 +72,7 @@ const Profile = () => {
 
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.put('http://localhost:5000/api/auth/profile', formData, {
+            const response = await axios.put('https://tgdd-be.mhoa.id.vn/api/auth/profile', formData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -97,7 +97,7 @@ const Profile = () => {
 
         try {
             const token = localStorage.getItem('token');
-            await axios.put('http://localhost:5000/api/auth/change-password', passwordData, {
+            await axios.put('https://tgdd-be.mhoa.id.vn/api/auth/change-password', passwordData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 

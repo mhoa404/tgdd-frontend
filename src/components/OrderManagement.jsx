@@ -15,7 +15,7 @@ const OrderManagement = () => {
     const fetchOrders = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('http://localhost:5000/api/orders', {
+            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/orders', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -34,7 +34,7 @@ const OrderManagement = () => {
         try {
             const token = localStorage.getItem('token');
             const response = await axios.put(
-                `http://localhost:5000/api/orders/${orderId}`,
+                `https://tgdd-be.mhoa.id.vn/api/orders/${orderId}`,
                 { status: newStatus },
                 {
                     headers: {
