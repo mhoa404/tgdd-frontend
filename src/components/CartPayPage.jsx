@@ -29,7 +29,7 @@ const CartPayPage = () => {
         try {
             const token = localStorage.getItem('token');
             if (token) {
-                const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/wallet', {
+                const response = await axios.get('https://tgdd-backend.onrender.com/api/wallet', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setWallet(response.data.wallet);
@@ -83,7 +83,7 @@ const CartPayPage = () => {
             if (isMultipleItems) {
                 // Xử lý nhiều sản phẩm
                 for (const item of cartItems) {
-                    await axios.post("https://tgdd-be.mhoa.id.vn/api/orders", {
+                    await axios.post("https://tgdd-backend.onrender.com/api/orders", {
                         fullName,
                         email,
                         phone,
@@ -101,7 +101,7 @@ const CartPayPage = () => {
                 }
             } else {
                 // Xử lý 1 sản phẩm
-                await axios.post("https://tgdd-be.mhoa.id.vn/api/orders", {
+                await axios.post("https://tgdd-backend.onrender.com/api/orders", {
                     fullName,
                     email,
                     phone,

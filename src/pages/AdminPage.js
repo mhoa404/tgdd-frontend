@@ -38,7 +38,7 @@ const AdminPage = () => {
     -------------------------------------------*/
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('https://tgdd-be.mhoa.id.vn/api/products');
+            const res = await axios.get('https://tgdd-backend.onrender.com/api/products');
             setProducts(res.data);
         }
         catch (error) {
@@ -60,11 +60,11 @@ const AdminPage = () => {
                 price: form.price.replace(/\./g, ''),
             };
             if (editingProduct) {
-                await axios.put(`https://tgdd-be.mhoa.id.vn/api/products/${editingProduct.id}`, formData);
+                await axios.put(`https://tgdd-backend.onrender.com/api/products/${editingProduct.id}`, formData);
                 setEditingProduct(null);
             }
             else {
-                await axios.post('https://tgdd-be.mhoa.id.vn/api/products', formData);
+                await axios.post('https://tgdd-backend.onrender.com/api/products', formData);
             }
             setForm({
                 title: '',
@@ -86,7 +86,7 @@ const AdminPage = () => {
     -------------------------------------------*/
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://tgdd-be.mhoa.id.vn/api/products/${id}`);
+            await axios.delete(`https://tgdd-backend.onrender.com/api/products/${id}`);
             fetchProducts();
         }
         catch (error) {

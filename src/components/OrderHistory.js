@@ -43,7 +43,7 @@ const OrderHistory = () => {
                 setLoading(false);
                 return;
             }
-            const response = await axios.get(`https://tgdd-be.mhoa.id.vn/api/orders/user/${userEmail}`, {
+            const response = await axios.get(`https://tgdd-backend.onrender.com/api/orders/user/${userEmail}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

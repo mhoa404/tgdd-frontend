@@ -26,7 +26,7 @@ export default function Signup() {
         setSuccess('');
         setIsLoading(true);
         try {
-            const response = await fetch('https://tgdd-be.mhoa.id.vn/api/auth/signup', {
+            const response = await fetch('https://tgdd-backend.onrender.com/api/auth/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

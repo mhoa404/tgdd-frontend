@@ -32,7 +32,7 @@ const WalletPage = () => {
         }
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.post('https://tgdd-be.mhoa.id.vn/api/wallet/deposit', { amount: parseInt(depositAmount) }, { headers: { Authorization: `Bearer ${token}` } });
+            const response = await axios.post('https://tgdd-backend.onrender.com/api/wallet/deposit', { amount: parseInt(depositAmount) }, { headers: { Authorization: `Bearer ${token}` } });
             setTransferInfo(response.data);
             alert('Yêu cầu nạp tiền đã được tạo! Vui lòng chuyển khoản theo thông tin bên dưới.');
         }
@@ -44,7 +44,7 @@ const WalletPage = () => {
     const fetchWalletInfo = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/wallet', {
+            const response = await axios.get('https://tgdd-backend.onrender.com/api/wallet', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setWallet(response.data.wallet);

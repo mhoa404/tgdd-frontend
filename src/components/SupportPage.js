@@ -24,7 +24,7 @@ export default function SupportPage() {
         setError("");
         console.log(" Gửi yêu cầu:", formData);
         try {
-            const res = await fetch("https://tgdd-be.mhoa.id.vn/api/support", {
+            const res = await fetch("https://tgdd-backend.onrender.com/api/support", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

@@ -66,7 +66,7 @@ const Profile = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.put('https://tgdd-be.mhoa.id.vn/api/auth/profile', formData, {
+            const response = await axios.put('https://tgdd-backend.onrender.com/api/auth/profile', formData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             localStorage.setItem('user', JSON.stringify(response.data.user));
@@ -89,7 +89,7 @@ const Profile = () => {
         setIsLoading(true);
         try {
             const token = localStorage.getItem('token');
-            await axios.put('https://tgdd-be.mhoa.id.vn/api/auth/change-password', passwordData, {
+            await axios.put('https://tgdd-backend.onrender.com/api/auth/change-password', passwordData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             toast.success('Đổi mật khẩu thành công!');

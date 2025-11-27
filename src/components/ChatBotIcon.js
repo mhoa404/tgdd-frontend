@@ -26,7 +26,7 @@ const ChatBotIcon = () => {
  
         -----------------------------------*/
         try {
-            const response = await axios.post('https://tgdd-be.mhoa.id.vn/api/chatbot/chat', { prompt: message });
+            const response = await axios.post('https://tgdd-backend.onrender.com/api/chatbot/chat', { prompt: message });
             setResponses([...newResponses, { text: response.data.text, isUser: false }]);
             setMessage('');
         }

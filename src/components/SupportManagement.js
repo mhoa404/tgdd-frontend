@@ -15,7 +15,7 @@ const SupportManagement = () => {
         try {
             const token = localStorage.getItem('token');
             console.log('Token:', token);
-            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/support', {
+            const response = await axios.get('https://tgdd-backend.onrender.com/api/support', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             console.log('Response data:', response.data);
@@ -41,7 +41,7 @@ const SupportManagement = () => {
                 reply,
                 token
             });
-            await axios.post(`https://tgdd-be.mhoa.id.vn/api/support/${requestId}/reply`, { reply }, {
+            await axios.post(`https://tgdd-backend.onrender.com/api/support/${requestId}/reply`, { reply }, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

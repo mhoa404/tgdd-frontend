@@ -9,7 +9,7 @@ const Notifications = () => {
     const fetchNotifications = async () => {
         try {
             const userEmail = localStorage.getItem('userEmail');
-            const response = await axios.get(`https://tgdd-be.mhoa.id.vn/api/notifications/${userEmail}`);
+            const response = await axios.get(`https://tgdd-backend.onrender.com/api/notifications/${userEmail}`);
             const newNotifications = response.data;
             const oldCount = notifications.length;
             // Nếu có notification mới về đơn hàng
@@ -33,7 +33,7 @@ const Notifications = () => {
     }, []);
     const handleMarkAsRead = async (notificationId) => {
         try {
-            await axios.put(`https://tgdd-be.mhoa.id.vn/api/notifications/${notificationId}/read`);
+            await axios.put(`https://tgdd-backend.onrender.com/api/notifications/${notificationId}/read`);
             fetchNotifications();
         }
         catch (error) {

@@ -15,7 +15,7 @@ const OrderManagement = () => {
     const fetchOrders = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://tgdd-be.mhoa.id.vn/api/orders', {
+            const response = await axios.get('https://tgdd-backend.onrender.com/api/orders', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -34,7 +34,7 @@ const OrderManagement = () => {
     const handleUpdateStatus = async (orderId, newStatus) => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.put(`https://tgdd-be.mhoa.id.vn/api/orders/${orderId}`, { status: newStatus }, {
+            const response = await axios.put(`https://tgdd-backend.onrender.com/api/orders/${orderId}`, { status: newStatus }, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'

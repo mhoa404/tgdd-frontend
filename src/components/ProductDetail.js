@@ -26,7 +26,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const res = await axios.get(`https://tgdd-be.mhoa.id.vn/api/products/${id}`);
+                const res = await axios.get(`https://tgdd-backend.onrender.com/api/products/${id}`);
                 setProduct(res.data);
             }
             catch (err) {

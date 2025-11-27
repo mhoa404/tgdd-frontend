@@ -12,7 +12,7 @@ const CartPage = ({ searchQuery = '', categoryFilter = '' }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get("https://tgdd-be.mhoa.id.vn/api/products");
+                const response = await axios.get("https://tgdd-backend.onrender.com/api/products");
                 const combinedProducts = [...productsMock, ...response.data];
                 setProducts(combinedProducts);
             } catch (error) {

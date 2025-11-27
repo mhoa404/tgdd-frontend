@@ -21,7 +21,7 @@ const AdminUsers = () => {
     const fetchUsers = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await axios.get('https://tgdd-be.mhoa.id.vn/api/admin/users', {
+            const res = await axios.get('https://tgdd-backend.onrender.com/api/admin/users', {
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             setUsers(res.data || []);
@@ -51,7 +51,7 @@ const AdminUsers = () => {
     const saveEdit = async (id) => {
         try {
             const token = localStorage.getItem('token');
-            await axios.put(`https://tgdd-be.mhoa.id.vn/api/admin/users/${id}`, form, {
+            await axios.put(`https://tgdd-backend.onrender.com/api/admin/users/${id}`, form, {
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             await fetchUsers();
@@ -66,7 +66,7 @@ const AdminUsers = () => {
             return;
         try {
             const token = localStorage.getItem('token');
-            await axios.delete(`https://tgdd-be.mhoa.id.vn/api/admin/users/${id}`, {
+            await axios.delete(`https://tgdd-backend.onrender.com/api/admin/users/${id}`, {
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             await fetchUsers();
@@ -79,7 +79,7 @@ const AdminUsers = () => {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            await axios.post('https://tgdd-be.mhoa.id.vn/api/admin/users', newUser, {
+            await axios.post('https://tgdd-backend.onrender.com/api/admin/users', newUser, {
                 headers: token ? { Authorization: `Bearer ${token}` } : {}
             });
             setNewUser({ first_name: '', last_name: '', email: '', password: '', role: 'user', phone: '', gender: '' });
